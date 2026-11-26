@@ -1,0 +1,90 @@
+/* Marquardt template look: Franklin Gothic, teal headlines, grey body, confidential footer.
+   Values taken from Präsentation1.pptx (theme + master). */
+
+:root {
+  --mq-teal: #009a9b;      /* accent1: headline */
+  --mq-teal-dark: #006470; /* accent3: sub headline, bullets, links */
+  --mq-grey: #595959;      /* tx2: body text */
+  --mq-footer: #bdbdbd;    /* footer text */
+  --font-book: 'Franklin Gothic Book', 'Libre Franklin', Arial, sans-serif;
+  --font-demi: 'Franklin Gothic Demi', 'Libre Franklin', Arial, sans-serif;
+  --slidev-theme-primary: var(--mq-teal-dark);
+}
+
+.slidev-layout {
+  background: #fff;
+  color: var(--mq-grey);
+  font-family: var(--font-book);
+  font-weight: 300;
+  font-synthesis: none;
+  padding: 20px 30px 70px 30px;
+  font-size: 1.05rem;
+  line-height: 1.3;
+}
+
+/* Headline: 32 pt, caps, accent1 */
+h1 {
+  font-family: var(--font-demi);
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--mq-teal);
+  margin: 0 0 18px;
+}
+/* Sub headline: caps, wide tracking, accent3 */
+h2 {
+  font-family: var(--font-demi);
+  font-weight: 600;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 2.2px;
+  color: var(--mq-teal-dark);
+  margin: 0 0 6px;
+}
+strong { font-family: var(--font-demi); font-weight: 600; color: var(--mq-grey); }
+a { color: var(--mq-teal-dark); border: none; text-decoration: underline; }
+li { margin: 0.25em 0; }
+li::marker { color: var(--mq-teal-dark); }
+
+.fig { max-width: 100%; max-height: 280px; object-fit: contain; display: block; margin: 0 auto; }
+.fig-sm { max-height: 190px; }
+.src { font-size: 0.75rem; color: var(--mq-grey); margin-top: 0.25rem; }
+.src a { color: var(--mq-grey); }
+.ref { font-size: 0.75em; vertical-align: super; }
+.grid { gap: 2rem; }
+
+/* Footer (global-bottom.vue) */
+.mq-footer {
+  z-index: 10;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  font-family: var(--font-book);
+  font-weight: 300;
+  font-synthesis: none;
+  color: var(--mq-footer);
+  text-transform: uppercase;
+}
+.mq-footer .nr {
+  position: absolute; left: 30px; bottom: 15px;
+  font-family: var(--font-demi); font-weight: 600;
+  font-size: 10.2px; letter-spacing: 0.5px;
+}
+.mq-footer .date {
+  position: absolute; left: 54px; bottom: 15px;
+  font-size: 10.2px; letter-spacing: 0.7px; white-space: nowrap;
+}
+.mq-footer .conf {
+  position: absolute; left: 30px; bottom: 3px;
+  font-size: 9.2px; letter-spacing: 1.2px; white-space: nowrap;
+}
+/* Replace the .mq-footer .conf b rule */
+.mq-footer .conf b {
+  margin-right: 12px;
+  font-family: var(--font-demi);
+  font-weight: 600;
+}
+.mq-footer .conf span { text-transform: none; }
+.mq-footer .logo { position: absolute; left: 870px; top: 506px; width: 81px; }
