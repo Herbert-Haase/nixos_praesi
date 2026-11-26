@@ -16,7 +16,7 @@ function buildFooterMeta(page: number) {
 </script>
 
 <template>
-  <div v-if="$slidev.nav.currentPage > 1" class="mq-footer">
+  <div class="mq-footer">
     <span class="nr">{{ buildFooterMeta($slidev.nav.currentPage).page }}</span>
     <span class="date">{{ buildFooterMeta($slidev.nav.currentPage).dateText }}</span>
     <img class="logo" src="/marquardt-logo.png" />
