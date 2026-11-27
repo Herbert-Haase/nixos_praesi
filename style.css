@@ -88,3 +88,40 @@ li::marker { color: var(--mq-teal-dark); }
 }
 .mq-footer .conf span { text-transform: none; }
 .mq-footer .logo { position: absolute; left: 870px; top: 506px; width: 81px; }
+
+/* Append at the end of style.css */
+.slidev-vclick-target {
+  transition: opacity 0.35s ease;
+}
+
+.slidev-toc a {
+  text-decoration: none;
+}
+
+.slidev-toc a:hover {
+  text-decoration: underline;
+}
+
+.title-slide-wrapper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.title-logo-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;          /* scale by height, width follows the aspect ratio */
+  width: auto;
+  max-width: 90%;
+  object-fit: contain;
+  opacity: 0.34;        /* faint enough that the text stays readable */
+  pointer-events: none;
+  z-index: 0;
+}

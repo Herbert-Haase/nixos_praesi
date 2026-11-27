@@ -11,7 +11,9 @@
   "license": "ISC",
   "scripts": {
     "dev": "slidev --open",
-    "export": "slidev export --output uwb-concurrent-ranging.pdf"
+    "export": "slidev export",
+    "html": "pnpm exec slidev build",
+    "host": "python3 -m http.server -d dist 8000"
   },
   "devEngines": {
     "packageManager": {

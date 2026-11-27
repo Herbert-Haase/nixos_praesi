@@ -5,19 +5,33 @@ title: presentation
 aspectRatio: 16/9
 colorSchema: light
 mdc: true
-transition: none
-exportFilename: presentation
+transition: slide-up
+exportFilename: nixos
 fonts:
   sans: Franklin Gothic Book, Libre Franklin, Arial, sans-serif
   mono: monospace
   provider: none
 ---
 
-# NixOS
-
-## Everything, Everywhere, All at Once
-
+<div class="title-slide-wrapper">
+<img
+  src="/nixos-logomark-default-gradient-recommended.svg"
+  alt="NixOS"
+  class="title-logo-overlay"
+/>
+  <div class="title-content">
+    <h1>NixOS</h1>
+    <h2>Alles, Überall, zur gleichen Zeit</h2>
+    <p>
 Reproduzierbare Systeme, Pakete und Entwicklungsumgebungen aus einer Konfiguration
+</p>
+  </div>
+</div>
+
+
+---
+
+  <Toc :maxDepth="2"/>
 
 ---
 
@@ -26,7 +40,7 @@ Reproduzierbare Systeme, Pakete und Entwicklungsumgebungen aus einer Konfigurati
 <p>Simplifiziertes Beispiel, größeres Beispiel in Teams</p>
 <p>Das gesamte System in einer Datei: `/etc/nixos/configuration.nix`</p>
 
-```nix
+```nix 
 { pkgs, ... }: {
   networking.hostName = "rpi";
   services.openssh.enable = true;
@@ -240,7 +254,8 @@ pkgs.stdenv.mkDerivation {
 - **jetpack-nixos** (Anduril): NixOS auf NVIDIA-Jetson-Geräten<span class="ref">[7]</span>
 - **Clearpath Robotics** stellte einen Nix-Ansatz für ROS auf der ROSCon 2022 vor: "4.5 times faster with 10% of the resources!"<span class="ref">[10]</span>
 
-**Einschätzung:** gut nutzbar, aber community-getragen und kein offizieller ROS-Weg, `/opt/ros` ersetzt man nicht ohne Aufwand
+<div v-click class="mt-4">
+<b>Einschätzung:</b> gut nutzbar, aber community-getragen und kein offizieller ROS-Weg, <code>/opt/ros</code> ersetzt man nicht ohne Aufwand
 
 <blockquote>
 General cost/benefit/risk of a large system migration (no matter the technology) vs other software and infrastructure investments we could be making
@@ -251,6 +266,7 @@ Support of Nix by the various other tools in our CI system (not just build tools
 
 All of this is to say that I’m not aware of any technical reason your ambitious idea might not work.  -- Ryan Gariepy OSRF Board Member<span class="ref">[11]</span>
 </blockquote>
+</div>
 
 <div class="src">[7] <a href="https://github.com/lopsided98/nix-ros-overlay">nix-ros-overlay</a> · [8] <a href="https://github.com/wentasah/ros2nix">wentasah/ros2nix</a> · [9] <a href="https://github.com/hacker1024/nix-ros-workspace">hacker1024/nix-ros-workspace</a> · [10] <a href="https://github.com/clearpathrobotics/nix-ros-base">clearpathrobotics/nix-ros-base</a> · [11] <a href="https://discourse.openrobotics.org/t/build-systems-package-management-and-nix/41488/24">lange technische Forum Diskussion</a></div>
 
